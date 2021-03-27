@@ -82,7 +82,7 @@ def delete(request,todo_pk):
 @login_required
 def completed_todos(request):
     todos=Todo.objects.filter(user=request.user, completed__isnull=False).order_by('-completed')
-    return render(request, 'Firstpage/completed.html', {'todos':todos })
+    return render(request, 'Firstpage/completed_todos.html', {'todos':todos })
 @login_required
 def logoutuser(request):
     if(request.method=="POST"):

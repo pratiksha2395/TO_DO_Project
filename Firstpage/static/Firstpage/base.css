@@ -35,4 +35,11 @@
   padding: 5px 5px;
   border: solid blue 1px;
   border-radius: 10px;
+  margin: 5px;
+}
+ul{
+  text-align: left;
+}
+.addtodo{
+  margin:5px;
 }

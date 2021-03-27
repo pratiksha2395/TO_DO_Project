@@ -3,11 +3,8 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'Firstpage\base.css' %}">
 
-<nav id="mainnavbar" class="navbar navbar-dark bg-dark navbar-expand-md py-0  fixed-top">
-        <a href="#" class="navbar-brand">Current To Do</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navlinks" aria-label="toggle">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+<nav id="mainnavbar" class="navbar navbar-dark bg-dark  py-0  fixed-top">
+        <a href="{% url 'current_todo' %}" class="navbar-brand" >To Do</a>
           <div class="name ml-auto">
           {% if user.is_authenticated %}
           <h5>Loggede in as {{ user.username }}</h5>  <!-- if user is authenticated we are printing it's name -->

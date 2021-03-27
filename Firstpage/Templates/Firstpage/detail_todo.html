@@ -8,18 +8,14 @@
 
 <div class="detailtodo">
 <h1>{{ todo.title }}</h1>
-<form method="post" class="detail">
+<form method="POST" class="detail">
   {% csrf_token %}
-  <form method="post" novalidate>
+  <form method="POST" novalidate>
     {% load widget_tweaks %}
-
-    <form method="post" novalidate>
-
-
+    <form method="POST" novalidate>
       {% for hidden_field in form.hidden_fields %}
         {{ hidden_field }}
       {% endfor %}
-
       {% for field in form.visible_fields %}
         <div class="form-group">
           {{ field.label_tag }}
@@ -29,12 +25,9 @@
           {% endif %}
         </div>
       {% endfor %}
-
-
+      <button type="submit" class="button btn-primary" >Save</button>
     </form>
 
-
-<button type="submit" class="button btn-primary">Save</button>
 </form>
 <form method="post" action="{% url 'completed' todo.id %}" class="detail">
   {% csrf_token %}
