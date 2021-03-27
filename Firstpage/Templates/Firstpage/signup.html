@@ -1,10 +1,40 @@
 {% extends 'Firstpage/base.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'Firstpage\app.css' %}">
 {% block content %}
-<h1>We are in Signup page</h1>
-<h2>{{ message }}</h2>  <! --Here we are printing the error message when password and confirm pass didn't match -->
-<form method="POST">
-{% csrf_token %}   <! --Cross Site Request Forgeries by using this tag we are providing protection for POST, PUT, DELETE methods against malicious attack -->
-{{form.as_p}}
-<button type="submit" >Sign Up</button>
-</form>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <h2>Sign Up</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp">
+                    <small id="usernameHelp" class="form-text text-muted">Your username must be unique. We'll let you know if someone has taken it already.</small>
+                </div>
+                <div class="form-group">
+                    <label for="password1">Password</label>
+                    <input type="password" name="password1" class="form-control" id="password1">
+                </div>
+                <div class="form-group">
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" name="password2" class="form-control" id="password2">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            <hr>
+            <div class="text-center">
+                Do you already have an account? <a href="{% url 'signin' %}">Login here</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
