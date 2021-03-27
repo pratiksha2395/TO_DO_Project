@@ -1,0 +1,11 @@
+<h1>Create Todo page</h1>
+{% extends 'Firstpage/base.html' %}
+{% block content %}
+
+<h2>{{ message }}</h2>  <! --Here we are printing the error message when password and confirm pass didn't match -->
+<form method="POST">
+{% csrf_token %}   <! --Cross Site Request Forgeries by using this tag we are providing protection for POST, PUT, DELETE methods against malicious attack -->
+{{form.as_p}}
+<button type="submit" >Save</button>
+</form>
+{% endblock %}

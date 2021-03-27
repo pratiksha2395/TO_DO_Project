@@ -1,0 +1,38 @@
+.navbar-brand{
+  font-size: 35px;
+}
+.navbar{
+  z-index:1;
+}
+.name{
+  color: white;
+}
+.todolist{
+  font-size: 20px;
+}
+.container{
+  background-color: rgb(245, 244, 243);
+  text-align: center;
+  border: coral 2px solid;
+  margin: 10em 20em;
+  display: block;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: auto;
+}
+.detail{
+  display: inline;
+}
+.detailtodo{
+  text-align: center;
+}
+.addtodo{
+  text-align: right;
+
+}
+.button{
+  padding: 5px 5px;
+  border: solid blue 1px;
+  border-radius: 10px;
+}

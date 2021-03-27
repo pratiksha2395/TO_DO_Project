@@ -1,0 +1,16 @@
+{% extends 'Firstpage/base.html' %}
+{% csrf_token %}
+{% block content %}
+
+{% for todo in todos %}
+  <li>
+    <a href="{% url 'viewtodo' todo.id %}">
+    {%if todo.important%}<b>{% endif %} {{ todo.title }}{%if todo.important%}</b>{% endif %}
+    {% if todo.memo %} - {{todo.memo }} {% endif %}
+    {{todo.completed | date:'D M Y H '}}
+    </a>
+  </li>
+{% endfor %}
+</ul></h1>
+
+{% endblock %}

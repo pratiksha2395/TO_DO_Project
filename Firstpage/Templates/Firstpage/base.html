@@ -1,0 +1,43 @@
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'Firstpage\base.css' %}">
+
+<nav id="mainnavbar" class="navbar navbar-dark bg-dark navbar-expand-md py-0  fixed-top">
+        <a href="#" class="navbar-brand">Current To Do</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navlinks" aria-label="toggle">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="name ml-auto">
+          {% if user.is_authenticated %}
+          <h5>Loggede in as {{ user.username }}</h5>  <!-- if user is authenticated we are printing it's name -->
+          <a href="{% url 'signin' %}">Logout</a>
+          {% else %}
+          </div>
+        <div class="collapse navbar-collapse" id="navlinks">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="{% url 'signin' %}">SignIn</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'signup' %}">SignUp</a>
+                </li>
+            </ul>
+        </div>
+        {% endif %}
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+    {% block content %}{% endblock %}
+    </div>
+
+
+
+
+
+
+<br>
+<br>

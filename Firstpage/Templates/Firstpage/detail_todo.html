@@ -1,0 +1,51 @@
+{% extends 'Firstpage/base.html' %}
+
+
+
+{% block content %}
+<div class="container-fluid col-8">
+
+
+<div class="detailtodo">
+<h1>{{ todo.title }}</h1>
+<form method="post" class="detail">
+  {% csrf_token %}
+  <form method="post" novalidate>
+    {% load widget_tweaks %}
+
+    <form method="post" novalidate>
+
+
+      {% for hidden_field in form.hidden_fields %}
+        {{ hidden_field }}
+      {% endfor %}
+
+      {% for field in form.visible_fields %}
+        <div class="form-group">
+          {{ field.label_tag }}
+          {% render_field field class="form-control" %}
+          {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text }}</small>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+
+    </form>
+
+
+<button type="submit" class="button btn-primary">Save</button>
+</form>
+<form method="post" action="{% url 'completed' todo.id %}" class="detail">
+  {% csrf_token %}
+<button type="submit" class="button btn-primary">Complete</button>
+</form>
+
+<form method="post" action="{% url 'delete' todo.id %}" class="detail">
+  {% csrf_token %}
+<button type="submit" class="button btn-primary">Delete</button>
+</form>
+
+{% endblock %}
+</div>
+</div>

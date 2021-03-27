@@ -1,0 +1,37 @@
+h1{
+  color: blue;
+}
+body{
+  font-family: 'Kaushan Script', cursive;
+}
+.content1{
+  background-color: rgb(245, 244, 243);
+  text-align: center;
+  border: coral 2px solid;
+  margin: 10em 20em;
+  display: block;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background: image(sr);
+  padding: auto;
+  background-image: "todo.jpg";
+}
+a{
+  font-size: 2em;
+  color: black;
+}
+.bkimage{
+  margin-bottom: 25px;
+  max-width: 100%;
+}
+.links{
+  margin-top: 0em;
+}
+.signup{
+  text-align: right;
+  font-size: 1em;
+}
+.sub{
+  margin-bottom: 20px;
+}
